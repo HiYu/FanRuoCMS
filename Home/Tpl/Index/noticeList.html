@@ -1,0 +1,32 @@
+<include file = "Public:header" title = 'fanruo-notice' css = 'homeindex'/>
+<div class = "main">
+		<div class = "sib">
+		<div class = "sib_nav">
+		<div class = "sib_title">公告分类</div>
+		<ul>
+			<volist name = "cat_list" id = "cl">
+			<li><a href = "__APP__/Index/noticeCat/cat_id/<{$cl.cat_id}>"><{$cl.cat_name}></a></li>
+			</volist>
+		</ul>
+		
+		</div>
+		<div class = "sib_nav">
+		<div class = "sib_title">联系我们</div>
+		<table>
+		<volist name = "con_list" id = "cl">
+		<tr><td><{$cl.contact_name}></td><td><{$cl.contact_type}></td><td> : <{$cl.contact_num}></td></tr>
+		</volist>
+		</table>
+		</div>
+	</div>
+<div class = "content_box">
+<div class = "title"><span>通知公告</span></div>
+	<foreach name = "list" item = "np">
+		<div class = "index_list">
+			<a href = "__APP__/Index/noticeRead/notice_id/<{$np.notice_id}>"><{$np.notice_title}> </a> [<{$np.post_date}>]
+		</div>
+	</foreach>
+	<div class = "page"><{$page}></div>
+</div>
+</div>
+<include file = "Public:footer"/>

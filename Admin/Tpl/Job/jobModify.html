@@ -1,0 +1,47 @@
+<include file = "Public:header" title = '招聘管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/Job/">职位列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/Job/jobAdd">新增职位</a></li>
+		<ul>
+	</div>
+	<div class = "content_box">
+		<script charset="utf-8" src="__PUBLIC__/editor/kindeditor-min.js"></script>
+		<script charset="utf-8" src="__PUBLIC__/editor/lang/zh_CN.js"></script>
+		<script>
+			var editor;
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea[name="more_discrib"]', {
+					resizeType : 0,
+					
+					
+					allowPreviewEmoticons : false,
+					allowImageUpload : false,
+					items : [
+						'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+						'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+						'insertunorderedlist', '|', 'emoticons', 'link']
+				});
+			});
+		</script>
+		<form method = "get" action = "__APP__/Job/doJobModify/job_id/<{$job_data.job_id}>">
+			<table>
+				<tr><td align ="right">职位</td><td><input class = "job_input" type = "text" name = "job_name" value = "<{$job_data.job_name}>"></td></tr>
+				<tr><td align ="right">职位分类</td><td><input class = "job_input" type = "text" name = "job_cat" value = "<{$job_data.job_cat}>"></td></tr>
+				<tr><td align ="right">招聘人数</td><td><input class = "job_input" type = "text" name = "num" value = "<{$job_data.num}>"></td></tr>
+				<tr><td align ="right">工作地点</td><td><input class = "job_input" type = "text" name = "work_where" value = "<{$job_data.work_where}>"></td></tr>
+				<tr><td align ="right">薪资待遇</td><td><input class = "job_input" type = "text" name = "wage" value = "<{$job_data.wage}>"></td></tr>
+				<tr><td align ="right">性别需求</td><td><select class = "select" name = "ask_sex" ><option selected>不限</option><option>女</option><option>男</option></select></td></tr>
+				<tr><td align ="right">学历要求</td><td><select class = "select"  name = "ask_edu" ><option selected>不限</option><option>大专</option><option>本科</option><option>硕士</option><option>博士</option></select></td></tr>
+				<tr><td align ="right">经验需求</td><td><input class = "job_input" type = "text" name = "exp_require" value = "<{$job_data.exp_require}>"></td></tr>
+				<tr><td align ="right">状态</td><td><select  class = "select" name = "status" ><option selected>有效</option><option>无效</option></select></td></tr>
+				<tr><td align ="right">投递邮箱</td><td><input  class = "job_input"type = "text" name = "contact_email" value = "<{$job_data.contact_email}>"></td></tr>
+				<tr><td align ="right">备注</td><td><textarea id="editor_id" name="more_discrib" style="width:650px;height:160px;visibility:hidden;"><{$job_data.more_discrib}></textarea></td></tr>	
+				<tr><td></td><td ><input type = "submit" value = "提交" class = "submit"></td></tr>
+			</table>
+		</form>
+		
+	</div>
+</div>
+<include file = "Public:footer" />

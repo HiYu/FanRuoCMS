@@ -1,0 +1,41 @@
+<include file = "Public:header" title = '产品管理' css = 'newsnotice'/>
+<div class = "main">
+<div class = "nav">
+	<ul>
+	<li><a target = "mainframe" href = "__APP__/News/">产品列表</a></li>
+	<li><a target = "mainframe" href = "__APP__/News/newsAdd">新增产品</a></li>
+	<ul>
+</div>
+<div class = "content_box">
+<script charset="utf-8" src="__PUBLIC__/editor/kindeditor.js"></script>
+<script charset="utf-8" src="__PUBLIC__/editor/lang/zh_CN.js"></script>
+<script>
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#editor_id');
+        });
+		KindEditor.ready(function(K) {
+        K.create('#editor_id', {
+                afterUpload : function(url) {
+                        alert(url);
+                }
+        });
+});
+</script>
+
+<form name = "add" method = "get" action = "__APP__/Product/doProductAdd" >
+	<table>
+		<tr><td>产品名称</td><td><input class = "input_box" type = "text" name = "pro_name"/></td></tr>
+		<tr><td>产品价格</td><td><input class = "input_box" type = "text" name = "pro_price"/></td></tr>
+		<tr><td>所属系列</td><td><select name = "pro_cat">
+			<volist name = "cat_data" id = "pp" >
+			<option value = "<{$pp.cat_name}>" ><{$pp.cat_name}></option>
+			</volist>
+		</select></td></tr>
+	</table>
+	<textarea id="editor_id" name="pro_discrib" style="width:700px;height:300px;">
+	
+	</textarea>
+	<input type = "submit"  value = "提交"/>
+</form>	
+</div>
+</div>

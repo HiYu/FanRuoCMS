@@ -1,0 +1,30 @@
+<include file = "Public:header" title = '图片管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/Image/">图片列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/Image/imageAdd/">新增图片</a></li>
+		<ul>
+	</div>
+	<div class = "content_box">
+	<form name = "add" method = "post" enctype="multipart/form-data" action = "__APP__/Image/doImageAdd" >
+		<table>
+			<tr><td>名称</td><td><input class = "input_box" type = "text" name = "image_name"/></td></tr>
+			<tr><td>排序</td>
+				<td><input class = "input_box" type = "text" name = "image_id"/></td>
+			</tr>
+			<tr><td>显示</td>
+				<td><select class = "select" name = "is_display">
+				<option value ='0'>显示</option>
+				<option value ='1'>不显示</option>
+				<select/></td>
+			</tr>
+			<tr><td>图片</td>
+				<td><input class = "input_box" type = "file" name = "image_url"/></td>
+			</tr>
+		</table>
+		<input type = "submit"  value = "提交" class = "submit"/>
+	</form>	
+	</div>
+</div>
+<include file = "Public:footer" />

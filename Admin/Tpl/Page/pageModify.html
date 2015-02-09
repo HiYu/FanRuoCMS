@@ -1,0 +1,30 @@
+<include file = "Public:header" title = '单页管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/Page/">单页列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/Page/pageAdd">新增单页</a></li>
+		
+		<ul>
+	</div>
+	<div class = "content_box">
+	<script charset="utf-8" src="__PUBLIC__/editor/kindeditor.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/editor/lang/zh_CN.js"></script>
+	<script>
+			KindEditor.ready(function(K) {
+					window.editor = K.create('#editor_id');
+			});
+	</script>
+
+	<form name = "add" method = "post" action = "__APP__/Page/doPageModify/page_id/<{$page_data.page_id}>" >
+		<table>
+			<tr><td>标题</td><td><input class = "input_box" type = "text" name = "page_title" value = "<{$page_data.page_title}>"/></td></tr>
+		</table>
+		<textarea id="editor_id" name="content" style="width:700px;height:300px;">
+		<{$page_data.content}>
+		</textarea>
+		<input type = "submit" class = "submit" value = "提交"/>
+	</form>	
+	</div>
+</div>
+<include file = "Public:footer" />

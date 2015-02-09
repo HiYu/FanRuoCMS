@@ -1,0 +1,34 @@
+<include file = "Public:header" title = '产品管理' css = 'newsnotice'/>
+<div class = "main">
+<div class = "nav">
+	<ul>
+	<li><a target = "mainframe" href = "__APP__/Product/">产品列表</a></li>
+	<li><a target = "mainframe" href = "__APP__/Product/productAdd">新增产品</a></li>
+	<ul>
+</div>
+<div class = "list">
+<table class = "list_item">
+<tr>
+<th>ID</th>
+<th>名称</th>
+<th>系列</th>
+<th>价格</th>
+<th>操作</th>
+</tr>
+<foreach name = 'product_data' item = 'pp'>
+<tr>
+<td><span><{$pp.pro_id}></span></td>
+<td><span><a href = "__APP__/Product/productRead/pro_id/<{$pp.pro_id}>"><{$pp.pro_name}></a></span></td>
+<td><span><a href = "__APP__/Product/productCat/pro_cat/<{$pp.pro_cat}>"><{$pp.pro_cat}></a></span></td>
+<td><span><{$pp.pro_price}></span></td>
+<td><span><a href = "__APP__/Product/productDelete/pro_id/<{$pp.pro_id}>">删除</a>|<a href = "__APP__/Product/productModify/pro_id/<{$pp.pro_id}>">修改</a></span></td>
+</tr>
+
+</foreach>
+<tr><td  colspan = 5  class = "page" ><span><{$page}></span></td></tr>
+</table>
+</div>
+
+
+
+</div>

@@ -1,0 +1,25 @@
+﻿<include file = "Public:header" title = '欢迎您加入我们' css = 'register'/>
+<div id = "register_main">
+	<div id = "register_title">
+		<span>会员注册</span>
+	</div>
+	<div id = "register_box">
+	<form name = "register_from"  method = "post" action = "__APP__/User/do_register">
+	<table>
+	<tr>
+	<td class = "register_text">用户名</td>
+	<td><input type = "text" class = "text_input" name = "user_name"></td></tr>
+	<td class = "register_text">email</td>
+	<td><input type = "text" class = "text_input" name = "user_email"></td></tr>
+	<tr><td class = "register_text">密　码</td>
+	<td><input type = "password" class = "text_input" name = "user_pw"/></td></tr>
+	<tr><td class = "register_text">确认密码</td>
+	<td><input type = "password" class = "text_input" name = "user_pw1"/></td></tr>
+	<tr><td></td>
+	<td><input type = "submit" name = "register_button"class = "button" value = "注册"></td></tr>
+	</tr>
+	</table>
+	</form>
+	</div>
+</div>
+<include file = "Public:footer"/>

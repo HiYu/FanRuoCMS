@@ -1,0 +1,61 @@
+<include file = "Public:header" title = 'fanruo' css = 'homeindex'/>
+
+<div id = "index_box">
+<div class="sub_box">
+	
+	<div id="p-select" class="sub_nav">
+		<!--div class="sub_more"><a  href="#" onfocus="this.blur()" title="查看更多目的地旅游指南" style="font-size:12px;">更多>></a></div-->
+		<div class="sub_no" id="bd1lfsj">
+			<ul>
+			<for start = "1" end = "$image_count+1">
+				<li><{$i}></li>
+			</for>
+				
+			</ul>
+		</div>
+	</div>
+	
+	<div id="bd1lfimg">
+		<div>
+			<volist name = "image_list" id = "ip">
+				<dl class="show">
+					<dt><img src =  "<{$ip.image_path}>m_<{$ip.image_save_name}>" alt="<{$ip.iamge_name}>"></dt>
+				</dl>
+			</volist>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">movec();</script>
+		<div id = "index_content">
+			<div id = "index_news">
+			<h3 >新闻动态<IF condition = "$news_count gt 8"> <a href = "__APP__/Index/newsList">more>></a></if></h3>
+			<foreach name = "news_data" item = "np">
+			<div class = "index_list">
+			<a href = "__APP__/Index/newsRead/news_id/<{$np.news_id}>"><{$np.news_title}> </a> [<{$np.post_date}>]
+			</div>
+			</foreach>
+			</div>
+			<div id = "index_notice">
+			<h3>通知公告<IF condition = "$notice_count gt 8"> <a href = "__APP__/Index/noticeList">more>></a></if></h3>
+			<foreach name = "notice_data" item = "np">
+			<div class = "index_list">
+			<a href = "__APP__/Index/noticeRead/notice_id/<{$np.notice_id}>"><{$np.notice_title}> </a> [<{$np.post_date}>]
+			</div>
+			</foreach>
+			
+			</div>
+			<div id = "index_download">
+			<h3>下载</h3>
+			<IF condition = "$dl_count gt 8"> <a href = "__APP__/Index/downloadList">more>></a></if></h3>
+			<foreach name = "dl_data" item = "dp">
+			<div class = "index_list">
+			<a href = "__APP__/Index/downloadRead/dl_id/<{$dp.dl_id}>"><{$dp.dl_name}> </a> 
+			</div>
+			</foreach>
+			</div>
+			
+		</div>
+</div>
+<include file = "Public:footer"/>
+

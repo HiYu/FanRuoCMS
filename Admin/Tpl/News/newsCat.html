@@ -1,0 +1,20 @@
+<include file = "Public:header" title = '新闻管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/News/">新闻列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/News/newsAdd">新增新闻</a></li>
+		
+		<ul>
+	</div>
+	<div class = "content_box">
+			<h2><{$news_data.news_title}></h2>
+			
+			<div class = "content">
+				<{$news_data.content}>	
+			</div>
+			<div class = "post_time"><{$news_data.post_date}></div>
+		
+	</div>
+</div>
+<include file = "Public:footer" />

@@ -1,0 +1,32 @@
+<include file = "Public:header" title = '联系管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/Contact/">联系列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/Contact/contactAdd">新增联系</a></li>
+
+		<ul>
+	</div>
+	<div class = "list">
+		<table class = "list_item">
+		<tr>
+		<th>ID</th>
+		<th>名称</th>
+		<th>方式</th>
+		<th>号码</th>
+		<th>操作</th>
+		</tr>
+		<foreach name = 'con_list' item = 'cp'>
+		<tr>
+		<td><span><{$cp.contact_id}></span></td>
+		<td><span><{$cp.contact_name}></span></td>
+		<td><span><{$cp.contact_type}></span></td>
+		<td><span><{$cp.contact_num}></span></td>
+		<td><span><a href = "__APP__/Contact/contactDelete/contact_id/<{$cp.contact_id}>">删除</a>|<a href = "__APP__/Cat/contactModify/contact_id/<{$cp.contact_id}>">修改</a></span></td>
+		</tr>
+		</foreach>
+		<tr><td  colspan = 4  class = "page" ><span><{$page}></span></td></tr>
+		</table>
+	</div>
+</div>
+<include file = "Public:footer" />

@@ -1,0 +1,44 @@
+<include file = "Public:header" title = 'fanruo-news' css = 'homeindex'/>
+<div class = "main">
+		<div class = "sib">
+		
+		<div class = "sib_nav">
+		<div class = "sib_title">最新产品</div>
+		<ul>
+			<volist name = "new_pro" id = "pp">
+			<li><a href = "__APP__/Index/product/pro_id/<{$pp.pro_id}>"><{$pp.pro_name}></a></li>
+			</volist>
+		</ul>
+		</div>
+		<div class = "sib_nav">
+		<div class = "sib_title">产品系列</div>
+		<ul>
+			<volist name = "cat_list" id = "cl">
+			<li><a href = "__APP__/Index/ProCat/pro_cat/<{$cl.cat_name}>"><{$cl.cat_name}></a></li>
+			</volist>
+		</ul>
+		
+		</div>
+		<div class = "sib_nav">
+		<div class = "sib_title">联系我们</div>
+		<table>
+		<volist name = "con_list" id = "cl">
+		<tr><td><{$cl.contact_name}></td><td><{$cl.contact_type}></td><td> : <{$cl.contact_num}></td></tr>
+		</volist>
+		</table>
+		</div>
+	</div>
+	<div class = "content_box">
+		<table>
+		<tr><td>产品名称</td><td><{$pro_data.pro_name}></td></tr>
+		<tr><td>产品价格</td><td><{$pro_data.pro_price}></td></tr>
+		<tr><td>所属系列</td><td><{$pro_data.pro_cat}></td></tr>
+		</table>
+		<div class = "content">
+			<{$pro_data.pro_discrib}>	
+		</div>
+		
+	
+	</div>
+</div>
+<include file = "Public:footer"/>

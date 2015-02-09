@@ -1,0 +1,19 @@
+<include file = "Public:header" title = '下载管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/Download/">下载列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/Download/downloadAdd">新增下载</a></li>
+		<ul>
+	</div>
+	<div class = "content_box">
+			<h2><{$notice_data.title}></h2>
+			
+			<div class = "content">
+				<{$notice_data.content}>	
+			</div>
+			<div class = "post_time"><{$notice_data.post_date}></div>
+		
+	</div>
+</div>
+<include file = "Public:footer" />

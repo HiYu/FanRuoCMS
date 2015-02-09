@@ -1,0 +1,19 @@
+<include file = "Public:header" title = '单页管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/Page/">单页列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/Page/pageAdd">新增单页</a></li>
+		
+		<ul>
+	</div>
+	<div class = "content_box">
+			<h2><{$page_data.page_title}></h2>
+			
+			<div class = "content">
+				<{$page_data.content}>	
+			</div>
+		
+	</div>
+</div>
+<include file = "Public:footer" />

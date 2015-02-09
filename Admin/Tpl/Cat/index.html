@@ -1,0 +1,39 @@
+<include file = "Public:header" title = '分类管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/Cat/">分类列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/Cat/catAdd">新增分类</a></li>
+
+		<ul>
+	</div>
+	<div class = "list">
+		<table class = "list_item">
+		<tr>
+		<th>ID</th>
+		<th>分类名称</th>
+		<th>属性</th>
+		<th>操作</th>
+		</tr>
+		<foreach name = 'cat_list' item = 'cp'>
+		<tr>
+		<td><span><{$cp.cat_id}></span></td>
+		<td><span><{$cp.cat_name}></span></td>
+		<td><span>
+			<switch name = "cp.cat_author">
+				<case value = "0">新闻</case>
+				<case value = "1">公告</case>
+				<case value = "2">职位</case>
+				<case value = "3">产品</case>
+				<case value = "4">下载</case>
+				<default />
+			</switch>	
+		</span></td>
+		<td><span><a href = "__APP__/Cat/catDelete/cat_id/<{$cp.cat_id}>">删除</a>|<a href = "__APP__/Cat/catModify/cat_id/<{$cp.cat_id}>">修改</a></span></td>
+		</tr>
+		</foreach>
+		<tr><td  colspan = 4  class = "page" ><span><{$page}></span></td></tr>
+		</table>
+	</div>
+</div>
+<include file = "Public:footer" />

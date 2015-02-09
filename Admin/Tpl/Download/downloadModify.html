@@ -1,0 +1,43 @@
+<include file = "Public:header" title = '下载管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/Download/">下载列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/Download/downloadAdd">新增下载</a></li>
+		<ul>
+	</div>
+	<div class = "content_box">
+		<script charset="utf-8" src="__PUBLIC__/editor/kindeditor.js"></script>
+		<script charset="utf-8" src="__PUBLIC__/editor/lang/zh_CN.js"></script>
+		<script>
+				KindEditor.ready(function(K) {
+						window.editor = K.create('#editor_id');
+				});
+		</script>
+
+		<form name = "add" method = "post" action = "__APP__/Download/doDownloadModify/dl_id/<{$dl_data.dl_id}>" >
+			<table>
+			<tr><td>标题</td><td><input class = "input_box" type = "text" value = "<{$dl_data.dl_name}>" name = "dl_name"/></td></tr>
+			<tr><td>类别</td>
+				<td>
+					<select name = "dl_cat" class = "select">
+					<volist name = "cat_data" id = "cp" >
+						<if condition="$dl_data.dl_cat neq $cp.cat_name">
+						<option value = "<{$cp.cat_name}>"  ><{$cp.cat_name}></option>
+						<else /> 
+						<option value = "<{$cp.cat_name}>" selected ><{$cp.cat_name}></option>
+						</if>
+					</volist>
+					</select>
+				</td>
+			</tr>
+		</table>	
+
+			<textarea id="editor_id" name="dl_discrib" style="width:700px;height:300px;">
+			<{$dl_data.dl_discrib}>
+			</textarea>
+			<input type = "submit" class = "submit" value = "提交"/>
+		</form>	
+	</div>
+</div>
+<include file = "Public:footer" />

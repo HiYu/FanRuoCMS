@@ -1,0 +1,112 @@
+body{
+	margin:0 auto;
+	padding:0 auto;
+}
+input{
+	border:1px solid #E2E2E2;
+}
+.main{
+	margin:0px 0px 32px 20px;
+	border:1px solid #bfbfbf;
+	padding:30px auto;
+
+}
+.main .nav{
+	height:48px;
+	background:#80B201;
+	
+}
+.main .nav ul{
+	margin:0;
+	padding:0;
+}
+.main .nav ul li{
+	list-style:none;
+	float:left;
+	border-right:1px solid #FFF;
+	
+	
+}
+.main .nav ul li a{
+	color:#FFF;
+	text-decoration:none;
+	padding:0px 16px;
+	display:block;
+	line-height:48px;
+	height:48px;
+	font-size:20px;
+}
+.main .nav ul li a:hover{
+	background-color:#FFF;
+	color:#80B201;
+}
+
+.main .list{
+	margin:20px auto auto 20px;
+
+
+}
+
+.main .list table{
+	border-bottom:1px solid #EFEFEF;
+}
+.main .list tr{
+
+}
+.main .list th{
+	height:24px;
+	line-height:24px;
+	font-size:20px;
+	
+}
+.main .list td{
+	height:24px;
+	line-height:24px;
+	font-size:18px;
+	
+}
+.main .list  td span{
+	margin:auto 20px;
+}
+
+.main .list .page{
+	height:30px;
+	line-height:30px;
+}
+.main .list .page span{
+	margin:10 auto;
+	text-align:center;
+
+}
+.main .content_box{
+	margin:20px 180px auto 30px;
+	font-size:16px;
+}
+
+.content_box td  {
+	height:32px;
+	
+	
+}
+
+.input_box{
+	height:24px;
+	width:400px;
+	font-size:18px;
+}
+.job_input{
+	height:24px;
+	width:200px;
+	font-size:18px;
+}
+
+.main .submit{
+	height:32px;
+	width:64px;
+	margin:20px auto;
+	
+}
+.main .select{
+height:24px;
+font-size:18px;
+}

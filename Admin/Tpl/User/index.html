@@ -1,0 +1,36 @@
+<include file = "Public:header" title = '用户管理' css = 'newsnotice'/>
+<div class = "main">
+<div class = "nav">
+	<ul>
+	<li><a target = "mainframe" href = "__APP__/User/">用户列表</a></li>
+	<ul>
+</div>
+<div class = "list">
+<table class = "list_item">
+<tr>
+<th>ID</th>
+<th>用户名</th>
+<th>email</th>
+<th>权限</th>
+<th>状态</th>
+<th>操作</th>
+
+</tr>
+<foreach name = 'user_data' item = 'up'>
+<tr>
+<td><span><{$up.user_id}></span></td>
+<td><span><{$up.user_name}></a></span></td>
+<td><span><{$up.user_email}></a></span></td>
+<td><span><{$up.user_role}></span></td>
+<td><span><{$up.user_status}></span></td>
+<td><span><a href = "__APP__/User/UserDelete/user_id/<{$up.user_id}>">删除</a>|<a href = "__APP__/User/userSetStatus/user_id/<{$up.user_id}>">设置</a></span></td>
+</tr>
+
+</foreach>
+<tr><td  colspan = 5  class = "page" ><span><{$page}></span></td></tr>
+</table>
+</div>
+
+
+
+</div>

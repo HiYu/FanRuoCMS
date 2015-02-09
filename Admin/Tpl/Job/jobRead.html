@@ -1,0 +1,26 @@
+<include file = "Public:header" title = '新闻管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/Job/">职位列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/Job/jobAdd">新增职位</a></li>
+		<ul>
+	</div>
+	<div class = "content_box">
+	<table>
+		<tr><td>职位名称：</td><td><{$job_data.job_name}></td></tr>
+		<tr><td>部门：</td><td><{$job_data.job_cat}></td></tr>
+		<tr><td>招聘人数：</td><td><{$job_data.num}></td></tr>
+		<tr><td>工作地点：</td><td><{$job_data.work_where}></td></tr>
+		<tr><td>薪资待遇：</td><td><{$job_data.wage}></td></tr>
+		<tr><td>性别要求：</td><td><{$job_data.ask_sex}></td></tr>
+		<tr><td>学历要求：</td><td><{$job_data.ask_edu}></td></tr>
+		<tr><td>经验要求：</td><td><{$job_data.exp_require}></td></tr>
+		<tr><td>发布时间：</td><td><{$job_data.add_time}></td></tr>
+		<tr><td>状态：</td><td><{$job_data.status}></td></tr>
+		<tr><td>备注：</td><td><{$job_data.more_discrib}></td></tr>
+		<tr><td>联系方式：</td><td><{$job_data.contact_email}></td></tr>
+		</table>
+	</div>
+</div>
+<include file = "Public:footer" />

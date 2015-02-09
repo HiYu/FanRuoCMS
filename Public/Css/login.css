@@ -1,0 +1,52 @@
+﻿#login_main{
+	height:440px;
+	width:958px;
+	margin:0 auto;
+	border: 1px solid #bfbfbf;
+
+}
+#login_main #login_title{
+	height:36px;
+	width:958px;
+	margin:0 auto;
+	background:#EDEDED;
+	border-bottom: 1px solid #bfbfbf;
+	line-height:36px;
+
+}
+#login_main #login_title span{
+	position:relative;
+	left:10px;
+	
+}
+#login_main #login_box{
+
+	width:280px;
+	height:310px;
+	position:relative;
+	right:-630px;
+	border: 1px solid #bfbfbf;
+	border-top:2px solid #80B201;
+	margin-top:20px;
+
+}
+#login_main #login_box .text_input{
+	height:36px;
+	width:160px;
+	font-size:16px;
+}
+#login_main #login_box table{
+	margin:64px auto;
+	
+}
+#login_main #login_box table tr{
+height:42px;
+}
+#login_main #login_box table tr .login_text{
+font-size:16px;
+}
+#login_main #login_box .button{
+	height:32px;
+	width:64px;
+
+}

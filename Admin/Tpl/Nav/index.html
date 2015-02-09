@@ -1,0 +1,29 @@
+<include file = "Public:header" title = '导航管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/Nav/">导航列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/Nav/navAdd/">新增导航</a></li>
+		<ul>
+	</div>
+	<div class = "list">
+		<table class = "list_item">
+		<tr>
+		<th>ID</th>
+		<th>名称</th>
+		<th>地址</th>
+		<th>操作</th>
+		</tr>
+		<foreach name = 'nav_list' item = 'np'>
+		<tr>
+		<td><span><{$np.nav_id}></span></td>
+		<td><span><{$np.nav_name}></span></td>
+		<td><span><{$np.nav_url}></span></td>
+		<td><span><a href = "__APP__/Nav/navDelete/nav_id/<{$np.nav_id}>">删除</a>|<a href = "__APP__/Cat/navModify/nav_id/<{$np.nav_id}>">修改</a></span></td>
+		</tr>
+		</foreach>
+		<tr><td  colspan = 4  class = "page" ><span><{$page}></span></td></tr>
+		</table>
+	</div>
+</div>
+<include file = "Public:footer" />

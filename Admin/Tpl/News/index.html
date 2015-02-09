@@ -1,0 +1,32 @@
+<include file = "Public:header" title = '新闻管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/News/">新闻列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/News/newsAdd">新增新闻</a></li>
+
+		<ul>
+	</div>
+	<div class = "list">
+		<table class = "list_item">
+			<tr>
+				<th>ID</th>
+				<th>标题</th>
+				<th>分类</th>
+				<th>发布时间</th>
+				<th>操作</th>
+			</tr>
+			<foreach name = 'news_list' item = 'np'>
+				<tr>
+					<td><span><{$np.news_id}></span></td>
+					<td><span><a href = "__APP__/News/newsRead/news_id/<{$np.news_id}>"><{$np.news_title}></a></span></td>
+					<td><span><a href = "__APP__/News/newsCat/news_cat/<{$np.news_cat}>"><{$np.news_cat}></a></span></td>
+					<td><span><{$np.post_date}></span></td>
+					<td><span><a href = "__APP__/News/newsDelete/news_id/<{$np.news_id}>">删除</a>|<a href = "__APP__/News/newsModify/news_id/<{$np.news_id}>">修改</a></span></td>
+				</tr>
+			</foreach>
+			<tr><td  colspan = 5  class = "page" ><span><{$page}></span></td></tr>
+		</table>
+	</div>
+</div>
+<include file = "Public:footer" />

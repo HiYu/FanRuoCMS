@@ -1,0 +1,33 @@
+<include file = "Public:header" title = '图片管理' css = 'newsnotice'/>
+<div class = "main">
+	<div class = "nav">
+		<ul>
+		<li><a target = "mainframe" href = "__APP__/Image/">图片列表</a></li>
+		<li><a target = "mainframe" href = "__APP__/Image/imageAdd">新增图片</a></li>
+
+		<ul>
+	</div>
+	<div class = "list">
+		<table class = "list_item">
+		<tr>
+		
+		<th >名称</th>
+		<th>缩略图</th>
+		<th>排序</th>
+		<th>是否显示</th>
+		<th>操作</th>
+		</tr>
+		<foreach name = 'image_list' item = 'ip'>
+		<tr>
+		<td><span><{$ip.image_name}></span></td>
+		<td><span><img src = "../../<{$ip.image_path}>s_<{$ip.image_save_name}>"  /></span></td>
+		<td><span><{$ip.image_id}></span></td>
+		<td><span><if condition = "$ip.is_display eq 0">是<else/>否</if></span></td>
+		<td><span><a href = "__APP__/Image/imageDelete/image_id/<{$ip.image_id}>">删除</a>|<a href = "__APP__/Image/imageModify/image_id/<{$ip.image_id}>">修改</a></span></td>
+		</tr>
+		</foreach>
+		<tr><td  colspan = 4  class = "page" ><span><{$page}></span></td></tr>
+		</table>
+	</div>
+</div>
+<include file = "Public:footer" />

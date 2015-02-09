@@ -1,0 +1,46 @@
+body{
+	margin:0;
+	padding:0;
+	font-size:14px;
+	background:url('../Images/left_nav_bg.png') repeat-y;
+	background-color:#F3F3F3;
+	background-position:right;
+}
+#logo{
+	margin:5px auto;
+}
+.left_nav{
+}
+.left_nav h3{
+	background:#80B201;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+	margin-right:1px;
+}
+.left_nav ul{
+	margin:0;
+	padding:0;
+	
+}
+.left_nav li{
+	list-style:none;
+	text-align:center;
+	
+}
+.left_nav li a{
+	text-decoration:none;
+	display:block;
+	line-height:24px;
+	height:24px;
+	font-size:20px;
+	color:#000;
+	
+}
+
+.left_nav ul li a:hover{
+	background-color:#E4E4E4;
+	margin-right:1px;
+
+
+}

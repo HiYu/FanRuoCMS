@@ -1,0 +1,42 @@
+<include file = "Public:header" title = 'fanruo-notice' css = 'homeindex'/>
+<div class = "main">
+	<div class = "sib">
+		
+		<div class = "sib_nav">
+		<div class = "sib_title">最新下载</div>
+		<ul>
+			<volist name = "new_download" id = "dp">
+			<li><a href = "__APP__/Index/downloadRead/dl_id/<{$dp.dl_id}>"><{$dp.dl_name}></a></li>
+			</volist>
+		</ul>
+		</div>
+		<div class = "sib_nav">
+		<div class = "sib_title">下载分类</div>
+		<ul>
+			<volist name = "cat_list" id = "cl">
+			<li><a href = "__APP__/Index/downloadCat/cat_id/<{$cl.cat_id}>"><{$cl.cat_name}></a></li>
+			</volist>
+		</ul>
+		
+		</div>
+		<div class = "sib_nav">
+		<div class = "sib_title">联系我们</div>
+		<table>
+		<volist name = "con_list" id = "cl">
+		<tr><td><{$cl.contact_name}></td><td><{$cl.contact_type}></td><td> : <{$cl.contact_num}></td></tr>
+		</volist>
+		</table>
+		</div>
+	</div>
+	<div class = "content_box">
+		<h2><{$dl_data.dl_name}></h2>
+		
+		<div class = "content">
+			<{$dl_data.dl_discrib}>	
+		</div>
+		
+	
+	</div>
+</div>
+<include file = "Public:footer"/>
+
